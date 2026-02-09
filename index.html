@@ -33,25 +33,13 @@
     <p>
         More info. about media events in html5 players can be found at <a href="http://www.w3.org/2010/05/video/mediaevents.html">the w3c</a>
     </p>
-   <h2>Open Sample TXT File</h2>
 
-    <a id="txtLink" href="#" target="_blank">Open sample.txt</a>
+    <h2>Download Image on New Page</h2>
 
-    <script>
-        // Create text content
-        const textContent = "this is a test";
-
-        // Create Blob
-        const blob = new Blob([textContent], { type: "text/plain" });
-
-        // Create object URL
-        const url = URL.createObjectURL(blob);
-
-        // Assign to anchor
-        const link = document.getElementById("txtLink");
-        link.href = url;
-        link.download = "sample.txt";   // ensures .txt filename
-    </script>
+    <a href="download.html" target="_blank">
+        Go to Download Page
+    </a>
+        
  <script type="text/javascript">_satellite.pageBottom();</script>
     </body>
 </html>
