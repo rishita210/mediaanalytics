@@ -33,22 +33,24 @@
     <p>
         More info. about media events in html5 players can be found at <a href="http://www.w3.org/2010/05/video/mediaevents.html">the w3c</a>
     </p>
-  <h2>Generate TXT File</h2>
-    <button onclick="generateTXT()">Open TXT</button>
+   <h2>Open Sample TXT File</h2>
+
+    <a id="txtLink" href="#" target="_blank">Open sample.txt</a>
 
     <script>
-        function generateTXT() {
-            const textContent = "this is a test";
+        // Create text content
+        const textContent = "this is a test";
 
-            // Create a Blob with text content
-            const blob = new Blob([textContent], { type: "text/plain" });
+        // Create Blob
+        const blob = new Blob([textContent], { type: "text/plain" });
 
-            // Create a temporary URL
-            const url = URL.createObjectURL(blob);
+        // Create object URL
+        const url = URL.createObjectURL(blob);
 
-            // Open in new tab
-            window.open(url, "_blank");
-        }
+        // Assign to anchor
+        const link = document.getElementById("txtLink");
+        link.href = url;
+        link.download = "sample.txt";   // ensures .txt filename
     </script>
  <script type="text/javascript">_satellite.pageBottom();</script>
     </body>
