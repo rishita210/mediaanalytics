@@ -33,28 +33,21 @@
     <p>
         More info. about media events in html5 players can be found at <a href="http://www.w3.org/2010/05/video/mediaevents.html">the w3c</a>
     </p>
- <h2>Generate PDF in New Tab</h2>
-    <button onclick="generatePDF()">Open PDF</button>
-       <script>
-        function generatePDF() {
-            const { jsPDF } = window.jspdf;
+  <h2>Generate TXT File</h2>
+    <button onclick="generateTXT()">Open TXT</button>
 
-            const doc = new jsPDF();
+    <script>
+        function generateTXT() {
+            const textContent = "this is a test";
 
-            // Add content
-            doc.setFontSize(18);
-            doc.text("Sample PDF File", 20, 20);
+            // Create a Blob with text content
+            const blob = new Blob([textContent], { type: "text/plain" });
 
-            doc.setFontSize(12);
-            doc.text("This PDF was generated dynamically.", 20, 40);
-            doc.text("And opened in a new browser tab.", 20, 50);
-
-            // Generate Blob URL
-            const pdfBlob = doc.output("blob");
-            const pdfUrl = URL.createObjectURL(pdfBlob);
+            // Create a temporary URL
+            const url = URL.createObjectURL(blob);
 
             // Open in new tab
-            window.open(pdfUrl, "_blank");
+            window.open(url, "_blank");
         }
     </script>
  <script type="text/javascript">_satellite.pageBottom();</script>
